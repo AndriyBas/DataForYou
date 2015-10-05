@@ -6,8 +6,7 @@ package ua.com.dataforyou.utils;
 public class Utils {
 
     /**
-     * super complex algorithm to return random numbers
-     *
+     * super complex algorithm to return random number
      * @return truly random number
      */
     public static int getRandom() {
