@@ -5,6 +5,7 @@ package ua.com.dataforyou.auth;
  */
 public class AuthService implements AuthenticatorService {
     @Override
+    // wow
     public void login(String username, String password) {
         // TODO: implement
     }
