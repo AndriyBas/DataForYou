@@ -9,6 +9,6 @@ public class DatabaseManager {
     private final Context context;
 
     public DatabaseManager(Context context) {
-       
+        this.context = context;
     }
 }
