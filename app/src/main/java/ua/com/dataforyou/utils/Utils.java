@@ -13,6 +13,11 @@ public class Utils {
         return 4;
     }
 
+    public static boolean getRandomBool() {
+        return getRandom() > 0;
+    }
+
+
     @Override
     public String toString() {
         return super.toString();
