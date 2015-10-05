@@ -47,6 +47,23 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
 
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+
         return super.onOptionsItemSelected(item);
     }
 }
