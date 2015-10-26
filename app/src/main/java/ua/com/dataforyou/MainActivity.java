@@ -1,13 +1,16 @@
 package ua.com.dataforyou;
 
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,6 +48,20 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        }
+
+        if(id == R.id.action_about) {
+            String app_ver = "lol";
+            try
+            {
+                app_ver = this.getPackageManager().getPackageInfo(this.getPackageName(), 0).versionName;
+            }
+            catch (PackageManager.NameNotFoundException e)
+            {
+                Log.e("MainActivity", e.getMessage());
+            }
+
+            Toast.makeText(this, app_ver, Toast.LENGTH_LONG).show();
         }
 
         return super.onOptionsItemSelected(item);
