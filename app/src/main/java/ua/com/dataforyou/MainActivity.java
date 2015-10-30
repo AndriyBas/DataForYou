@@ -35,15 +35,6 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-
-
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-
-
 
         return true;
     }
@@ -61,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if(id == R.id.action_about) {
-            String app_ver = "lol";
+            String app_ver = "";
             try
             {
                 app_ver = this.getPackageManager().getPackageInfo(this.getPackageName(), 0).versionName;
@@ -73,23 +64,6 @@ public class MainActivity extends AppCompatActivity {
 
             Toast.makeText(this, app_ver, Toast.LENGTH_LONG).show();
         }
-
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
 
         return super.onOptionsItemSelected(item);
     }
