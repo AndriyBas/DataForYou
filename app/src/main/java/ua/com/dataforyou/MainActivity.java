@@ -1,13 +1,16 @@
 package ua.com.dataforyou;
 
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,15 +35,6 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-
-
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-
-
 
         return true;
     }
@@ -57,22 +51,19 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
 
+        if(id == R.id.action_about) {
+            String app_ver = "";
+            try
+            {
+                app_ver = this.getPackageManager().getPackageInfo(this.getPackageName(), 0).versionName;
+            }
+            catch (PackageManager.NameNotFoundException e)
+            {
+                Log.e("MainActivity", e.getMessage());
+            }
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+            Toast.makeText(this, app_ver, Toast.LENGTH_LONG).show();
         }
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
 
         return super.onOptionsItemSelected(item);
     }
